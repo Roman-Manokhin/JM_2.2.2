@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<!--th:each - подобие foreach для прохода по всем элементам коллекции и выводе-->
+<!--people - временная переменная, ${people}" - название коллекции-->
+<div th:each="car : ${cars}">
+    <!--        th:text - выводит названия-->
+    <!--        th:href - создаём ссылку с возможностью перехода по ней-->
+    <!--    указываем ссылку для перехода по пути /people/id(который мы получаем из нашей коллекции через геттер)-->
+    <!--    при нажатии на ссылку мы переходим в show-->
+    <a th:text="${car.getFirm() + ', ' + car.getModel() + ', ' + car.getYear()}">car</a>
+</div>
+<!--новая строка-->
+<br/>
+<!--полоса-->
+<hr/>
+</body>
+</html>
